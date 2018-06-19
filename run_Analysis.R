@@ -49,7 +49,7 @@ features <- read.table('UCI HAR Dataset/features.txt',colClasses = c("NULL",NA),
 colnames(df.HAR) <- features[,1]
 
 # Select columns with -mean() and -std()
-cols <- grep('-mean()|-std()', features[,1])
+cols <- grep('-mean\\(\\)|-std\\(\\)', features[,1])
 df.HAR <- df.HAR[,cols]
 
 # ACTIVITY
