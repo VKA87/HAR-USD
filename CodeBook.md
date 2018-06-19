@@ -12,6 +12,16 @@ The columns of this data frames are:
   - activity, 
   - mean each measurement,
   - standard deviation of each measurement.
+  
+ To do so, we proceed as follows:
+ 
+  1) Download and unzip the data set using the link above
+  2) Extract the train (X_train.txt) and test (X_test.txt) sets and merge them into a data frame df.HAR
+  3) Add the names of the features to the data frame using features.txt
+  4) Extract the features whose name contain "-mean()" or "-std()" using the grep() function
+  5) Add the activity of each example using y_train.txt and y_test.txt to df.HAR
+  6) Change the activity number to its name using activity_labels.txt
+  6) Add the subject ID of each example using subject_train.txt and subject_test.txt to df.HAR
 
 ## Processing - averaging over participants and activities (df.actsub.av)
-We use df.HAR to group the data by subject and activity and take the average of the features. The result is stored in a data frame df.actsub.av and exported in a text file actsub.txt
+We use df.HAR to group the data by subject and activity and take the average of the features. The result is stored in a data frame df.actsub.av and exported in a text file actsub.txt.
