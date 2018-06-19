@@ -25,8 +25,6 @@ library(dplyr)
 ## DOWNLOAD AND UNZIP ##
 ########################
 
-# Uncomment to download and unzip file
-
 fileURL <- 'https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip'
 download.file(fileURL, destfile = 'dataset.zip', method = 'curl')
 unzip("dataset.zip")
@@ -36,8 +34,8 @@ unzip("dataset.zip")
 ####################
 
 
-# MEASUREMENT
-#############
+# MEASUREMENTS
+##############
 
 # Import measurements
 measurements.train <- read.table('UCI HAR Dataset/train/X_train.txt',header = FALSE)
@@ -87,7 +85,7 @@ df.HAR$SUBJECT <- subject
 df.actsub.av <- aggregate(.~ACTIVITY+SUBJECT,df.HAR, mean)
 
 ## Export data frame
-write.table(df.actsub.av,row.name=FALSE)
+write.table(df.actsub.av,row.name=FALSE,file = 'actsub')
 
 
 
